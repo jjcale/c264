@@ -142,6 +142,11 @@ warm_start      ldx #<message_01        ; intro message
                 lda #$00
                 sta $1000
 
+                lda #$c2                ; fix Bruce Lee Basic end address
+                sta $2d
+                lda #$d8
+                sta $2e
+
                 ldx #<message_04        ; launch message
                 ldy #>message_04                  
                 jsr print_text   
